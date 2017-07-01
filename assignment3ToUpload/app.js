@@ -18,6 +18,7 @@ function NarrowItDownController(MenuSearchService) {
   ctrl.items = [];
 
   ctrl.getFilteredMenuItems = function(){
+    ctrl.message = false;
     if (ctrl.search == ""){
       ctrl.items = [];
       ctrl.message = true;
@@ -25,8 +26,10 @@ function NarrowItDownController(MenuSearchService) {
       ctrl.loader = true;
       MenuSearchService.getMatchedMenuItems(ctrl.search).then(function(data){
         ctrl.items = data;
-        ctrl.message = false;
         ctrl.loader = false;
+        if (ctrl.items.length == 0){
+          ctrl.message =true;
+        }
       });
     }
   }
