@@ -1,0 +1,6 @@
+<ul>
+  <li ng-repeat="item in $ctrl.items" ng-click="$ctrl.onClick({event: $event})" class="item">
+    {{item.name}} <br>
+    <div class='item-description'>{{item.description}}</div>
+  </li>
+</ul>
