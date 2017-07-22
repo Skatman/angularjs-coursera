@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="text-center">My Info</h2>
-  <h3 class="text-center" ng-show="!customerInfoCtrl.customer">Not Signed Up Yet. Sign up Now!</h3>
+  <h3 class="text-center" ng-show="!customerInfoCtrl.customer">Not Signed Up Yet. <a ui-sref="public.sign-up">Sign up Now!</a></h3>
   <p>{{customerInfoCtrl.customer.firstName}}<br>
      {{customerInfoCtrl.customer.lastName}}<br>
      {{customerInfoCtrl.customer.phone}}<br>
