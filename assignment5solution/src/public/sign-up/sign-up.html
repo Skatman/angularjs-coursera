@@ -1,0 +1,41 @@
+<div class="container">
+  <h2 class="text-center">Sign Up</h2>
+  <form name='signUpForm' novalidate>
+    <input type="text" name="firstName" placeholder="First Name"
+      ng-model="signUpCtrl.user.firstName"
+      required>
+    <br>
+
+    <input type="text" name="lastName" placeholder="Last Name"
+      ng-model="signUpCtrl.user.lastName"
+      required>
+    <br>
+
+    <input type="email" name="email" placeholder="Email"
+      ng-model="signUpCtrl.user.email"
+      required>
+      <br>
+
+    <input type="text" name="phone" placeholder="Phone ###-###-####"
+      ng-model="signUpCtrl.user.phone"
+      required>
+      <br>
+
+    <input type="text" name="menuNumber" placeholder="Favorite Dish (Menu Number)"
+      ng-model="signUpCtrl.user.menuNumber"
+      ui-validate="{menuNumber : 'signUpCtrl.correctMenuNumber($value)'}"
+      required>
+      <br>
+      <span ng-show='signUpForm.menuNumber.$error.menuNumber && signUpForm.menuNumber.$touched'>There is no such menu number<br></span>
+
+    <span class="success-text" ng-show='signUpCtrl.saveInfoSuccess'>Your information has been saved<br></span>
+
+    <br>
+    <button
+      class="btn btn-primary	"
+      ng-disabled="signUpForm.$invalid"
+      ng-click="signUpCtrl.saveCustomerInfo()">Submit</button>
+
+  </form>
+
+</div>
