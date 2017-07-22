@@ -1,0 +1,13 @@
+<div class="container">
+  <h2 class="text-center">My Info</h2>
+  <h3 class="text-center" ng-show="!customerInfoCtrl.customer">Not Signed Up Yet. Sign up Now!</h3>
+  <p>{{customerInfoCtrl.customer.firstName}}<br>
+     {{customerInfoCtrl.customer.lastName}}<br>
+     {{customerInfoCtrl.customer.phone}}<br>
+     {{customerInfoCtrl.customer.email}}<br>
+     {{customerInfoCtrl.customer.menuNumber}}<br>
+     {{customerInfoCtrl.menuItem.name}}<br>
+     {{customerInfoCtrl.menuItem.description}}<br>
+     <img class="img-responsive" width="250" height="150" ng-src="{{customerInfoCtrl.basePath}}/images/{{customerInfoCtrl.menuItem.short_name}}.jpg" alt="{{customerInfoCtrl.menuItem.name}}">
+  </p>
+</div>
